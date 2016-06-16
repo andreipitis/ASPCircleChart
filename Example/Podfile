@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ASPCircleChart_Example' do
+  pod 'ASPCircleChart', :path => '../'
+
+  target 'ASPCircleChart_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
