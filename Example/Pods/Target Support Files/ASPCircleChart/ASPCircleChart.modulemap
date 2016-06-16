@@ -1,0 +1,6 @@
+framework module ASPCircleChart {
+  umbrella header "ASPCircleChart-umbrella.h"
+
+  export *
+  module * { export * }
+}

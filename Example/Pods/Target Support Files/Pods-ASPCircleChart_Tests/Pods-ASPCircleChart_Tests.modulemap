@@ -1,0 +1,6 @@
+framework module Pods_ASPCircleChart_Tests {
+  umbrella header "Pods-ASPCircleChart_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

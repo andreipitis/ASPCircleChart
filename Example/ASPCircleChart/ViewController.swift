@@ -7,18 +7,68 @@
 //
 
 import UIKit
+import ASPCircleChart
 
 class ViewController: UIViewController {
+	
+	@IBOutlet weak var circleChart: ASPCircleChart!
+	
+	let dataSource = DataSource()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view, typically from a nib.
+		
+		circleChart.dataSource = dataSource
+	}
+	
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		var numberOfSlices = 2
+		
+		while numberOfSlices <= 2 {
+			numberOfSlices = random() % 8
+		}
+		
+		var values = [Int]()
+		
+		for _ in 0..<numberOfSlices {
+			values.append(random() % 100)
+		}
+		
+		dataSource.items = values
+		circleChart.reloadDataSource()
+	}
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+class DataSource: ASPCircleChartDataSource {
+	var items: [Int] = [44, 10, 134]
+	
+	@objc func numberOfDataPoints() -> Int {
+		return items.count
+	}
+	
+	@objc func dataPointsSum() -> Int {
+		return items.reduce(0, combine: { (initial, new) -> Int in
+			return initial + new
+		})
+	}
+	
+	@objc func dataPointAtIndex(index: Int) -> Int {
+		return items[index]
+	}
+	
+	
+	@objc func colorForDataPointAtIndex(index: Int) -> UIColor {
+		switch index {
+		case 0:
+			return UIColor(red: 205/255.0, green: 213/255.0, blue: 66/255.0, alpha: 1.0)
+		case 1:
+			return UIColor(red: 242/255.0, green: 115/255.0, blue: 82/255.0, alpha: 1.0)
+		case 2:
+			return UIColor(red: 83/255.0, green: 158/255.0, blue: 55/255.0, alpha: 1.0)
+		default:
+			return UIColor(red: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), green: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), blue: CGFloat(Float(arc4random()) / Float(UINT32_MAX)), alpha: 1.0)
+		}
+	}
 }
 

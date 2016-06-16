@@ -1,0 +1,22 @@
+{
+  "name": "ASPCircleChart",
+  "version": "0.1.0",
+  "summary": "A short description of ASPCircleChart.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/ASPCircleChart",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Andrei-Sergiu Pitis": "andrei.pitis@lateral-inc.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/ASPCircleChart.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ASPCircleChart/Classes/**/*"
+}

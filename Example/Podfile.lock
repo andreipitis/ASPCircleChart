@@ -1,0 +1,16 @@
+PODS:
+  - ASPCircleChart (0.1.0)
+
+DEPENDENCIES:
+  - ASPCircleChart (from `../`)
+
+EXTERNAL SOURCES:
+  ASPCircleChart:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ASPCircleChart: 470c11f16d5febb31f6c4a8e3933b6eebe646092
+
+PODFILE CHECKSUM: d648179da5dffeb06cdb83da3a1dcadbb61c7daa
+
+COCOAPODS: 1.0.1
