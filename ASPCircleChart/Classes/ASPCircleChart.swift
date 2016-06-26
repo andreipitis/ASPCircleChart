@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+Protocol that describes the datasource methods used by the CircleChart.
+*/
 @objc public protocol ASPCircleChartDataSource {
 	func numberOfDataPoints() -> Int
 	func dataPointAtIndex(index: Int) -> Int
@@ -15,18 +18,33 @@ import UIKit
 	func colorForDataPointAtIndex(index: Int) -> UIColor
 }
 
-@IBDesignable
-public class ASPCircleChart: UIView {
+/**
+ A simple chart that uses slices on a circle to represent data.
+*/
+@IBDesignable public class ASPCircleChart: UIView {
 	
+	/**
+	The starting angle in radians. Default value starts from the top.
+	*/
 	public var initialAngle: CGFloat = 3.0 * CGFloat(M_PI_2)
 	
+	/**
+	The width of the circle.
+	*/
 	@IBInspectable public var circleWidth: CGFloat = 10.0
+	
+	/**
+	The spacing between items. Should be a value between 0.0 and 0.5.
+	*/
 	@IBInspectable public var itemSpacing: CGFloat = 0.07 {
 		didSet {
 			itemSpacing = max(0.0, min(0.5, itemSpacing))
 		}
 	}
 	
+	/**
+	The datasource of the Chart.
+	*/
 	@IBOutlet public var dataSource: ASPCircleChartDataSource? {
 		didSet {
 			reloadDataSource()
@@ -40,6 +58,9 @@ public class ASPCircleChart: UIView {
 		reloadDataSource()
 	}
 	
+	/**
+	Reloads the datasource. Handles delete, insert and update animations.
+	*/
 	public func reloadDataSource() {
 		if let dataSource = dataSource {
 			startPoint = 0

@@ -8,15 +8,37 @@
 
 import UIKit
 
+/**
+Custom layer that draws a slice of a circle.
+*/
 public class ASPCircleChartSliceLayer: CALayer {
-	
+	/**
+	The start angle in radians of the slice.
+	*/
 	@NSManaged public var startAngle: CGFloat
+	
+	/**
+	The end angle in radians of the slice.
+	*/
 	@NSManaged public var endAngle: CGFloat
+	
+	/**
+	The color of the slice.
+	*/
 	public var strokeColor: UIColor = UIColor.blackColor()
+	/**
+	The width of the slice. Default value is 10.0.
+	*/
 	public var strokeWidth: CGFloat = 10.0
 	
+	/**
+	The duration of the slice animation. Default value is 0.35.
+	*/
 	public var animationDuration: Double = 0.35
 	
+	/**
+	The value that will be subtracted from the slice radius.
+	*/
 	public var radiusOffset: CGFloat = 0.0
 	
 	public override init() {
