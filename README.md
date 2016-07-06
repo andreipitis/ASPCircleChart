@@ -12,7 +12,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Usage
 
-[![aspcirclechart](https://cloud.githubusercontent.com/assets/8778656/16629418/42a66dce-43be-11e6-9578-4e09df8c584b.gif)]
+![aspcirclechart](https://cloud.githubusercontent.com/assets/8778656/16629418/42a66dce-43be-11e6-9578-4e09df8c584b.gif)
 
 ```swift
 let circleChart = ASPCircleChart(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
