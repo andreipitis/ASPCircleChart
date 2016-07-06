@@ -53,7 +53,12 @@ A simple chart that uses slices on a circle to represent data.
 	
 	private var startPoint: Int = 0
 	
-	required public init?(coder aDecoder: NSCoder) {
+	public override init(frame: CGRect) {
+		super.init(frame: frame)
+		reloadDataSource()
+	}
+	
+	public required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		reloadDataSource()
 	}

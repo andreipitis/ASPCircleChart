@@ -34,10 +34,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to reload the datasource with random values" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPp-Fs-72a">
+                                <rect key="frame" x="20" y="559" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HPp-Fs-72a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="AHU-F7-7wx"/>
                             <constraint firstItem="roJ-zt-mo1" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="CYz-y4-3eT"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HPp-Fs-72a" secondAttribute="bottom" constant="20" id="Kmu-dW-7IL"/>
+                            <constraint firstAttribute="trailing" secondItem="HPp-Fs-72a" secondAttribute="trailing" constant="20" id="xtB-AF-VZl"/>
                             <constraint firstItem="roJ-zt-mo1" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="zSP-pU-xnF"/>
                         </constraints>
                     </view>
@@ -47,6 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="325" y="385"/>
         </scene>
     </scenes>
 </document>
