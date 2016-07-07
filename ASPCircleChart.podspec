@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ASPCircleChart'
-  s.version          = '0.1.1'
+  s.version          = '0.1.3'
   s.summary          = 'ASPCircleChart is a simple chart that uses slices on a circle to represent data.'
 
 # This description is used to generate tags and improve search results.

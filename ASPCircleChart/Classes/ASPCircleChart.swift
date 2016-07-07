@@ -13,8 +13,8 @@ Protocol that describes the datasource methods used by the CircleChart.
 */
 @objc public protocol ASPCircleChartDataSource {
 	func numberOfDataPoints() -> Int
-	func dataPointAtIndex(index: Int) -> Int
-	func dataPointsSum() -> Int
+	func dataPointAtIndex(index: Int) -> Double
+	func dataPointsSum() -> Double
 	func colorForDataPointAtIndex(index: Int) -> UIColor
 }
 
@@ -45,13 +45,13 @@ A simple chart that uses slices on a circle to represent data.
 	/**
 	The datasource of the Chart.
 	*/
-	@IBOutlet public var dataSource: ASPCircleChartDataSource? {
+	@IBOutlet public weak var dataSource: ASPCircleChartDataSource? {
 		didSet {
 			reloadDataSource()
 		}
 	}
 	
-	private var startPoint: Int = 0
+	private var startPoint: Double = 0.0
 	
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -61,6 +61,17 @@ A simple chart that uses slices on a circle to represent data.
 	public required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		reloadDataSource()
+	}
+	
+	public override func layoutSubviews() {
+		if let slices = layer.sublayers?.filter({ (item) -> Bool in
+			return item is ASPCircleChartSliceLayer
+		}) {
+			
+			for slice in slices {
+				slice.frame = bounds
+			}
+		}
 	}
 	
 	/**
@@ -119,15 +130,15 @@ A simple chart that uses slices on a circle to represent data.
 			
 			var endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
 			
-			if endAngle - itemSpacing < startAngle && dataPoint > 0 {
+			if endAngle - itemSpacing < startAngle && dataPoint > Double(itemSpacing) {
 				let tempAngle = endAngle - itemSpacing
 				endAngle = startAngle
 				startAngle = tempAngle
-			} else if dataPoint > 0 {
+			} else if dataPoint > Double(itemSpacing) {
 				endAngle -= itemSpacing
 			}
 			
-			if (startAngle != endAngle - itemSpacing) && dataPoint > 0 {
+			if (startAngle != endAngle - itemSpacing) && dataPoint > Double(itemSpacing) {
 				slice.startAngle = startAngle
 				slice.endAngle = endAngle
 				slice.strokeWidth = circleWidth

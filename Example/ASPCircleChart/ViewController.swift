@@ -29,10 +29,11 @@ class ViewController: UIViewController {
 			numberOfSlices = random() % 8
 		}
 		
-		var values = [Int]()
+		var values = [Double]()
 		
 		for _ in 0..<numberOfSlices {
-			values.append(random() % 100)
+			let randomNumber = Double(random() % 100)
+			values.append(randomNumber)
 		}
 		
 		dataSource.items = values
@@ -41,19 +42,19 @@ class ViewController: UIViewController {
 }
 
 class DataSource: ASPCircleChartDataSource {
-	var items: [Int] = [44, 10, 134]
+	var items: [Double] = [44, 10, 134]
 	
 	@objc func numberOfDataPoints() -> Int {
 		return items.count
 	}
 	
-	@objc func dataPointsSum() -> Int {
-		return items.reduce(0, combine: { (initial, new) -> Int in
+	@objc func dataPointsSum() -> Double {
+		return items.reduce(0.0, combine: { (initial, new) -> Double in
 			return initial + new
 		})
 	}
 	
-	@objc func dataPointAtIndex(index: Int) -> Int {
+	@objc func dataPointAtIndex(index: Int) -> Double {
 		return items[index]
 	}
 	
