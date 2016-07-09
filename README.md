@@ -18,7 +18,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 let circleChart = ASPCircleChart(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 circleChart.dataSource = dataSource
 
-circleChart.reloadDataSource()
+circleChart.reloadData()
 ```
 
 ## Installation
