@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 		}
 		
 		dataSource.items = values
-		circleChart.reloadDataSource()
+		circleChart.reloadData()
 	}
 }
 

@@ -47,7 +47,7 @@ A simple chart that uses slices on a circle to represent data.
 	*/
 	@IBOutlet public weak var dataSource: ASPCircleChartDataSource? {
 		didSet {
-			reloadDataSource()
+			reloadData()
 		}
 	}
 	
@@ -55,12 +55,12 @@ A simple chart that uses slices on a circle to represent data.
 	
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
-		reloadDataSource()
+		reloadData()
 	}
 	
 	public required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-		reloadDataSource()
+		reloadData()
 	}
 	
 	public override func layoutSubviews() {
@@ -77,7 +77,7 @@ A simple chart that uses slices on a circle to represent data.
 	/**
 	Reloads the datasource. Handles delete, insert and update animations.
 	*/
-	public func reloadDataSource() {
+	public func reloadData() {
 		if let dataSource = dataSource {
 			let numberOfDataPoints = dataSource.numberOfDataPoints()
 			
