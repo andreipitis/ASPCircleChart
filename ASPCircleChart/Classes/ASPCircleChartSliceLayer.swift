@@ -11,50 +11,50 @@ import UIKit
 /**
 Custom layer that draws a slice of a circle.
 */
-public class ASPCircleChartSliceLayer: CALayer {
+open class ASPCircleChartSliceLayer: CALayer {
 	/**
 	The start angle in radians of the slice.
 	*/
-	@NSManaged public var startAngle: CGFloat
+	@NSManaged open var startAngle: CGFloat
 	
 	/**
 	The end angle in radians of the slice.
 	*/
-	@NSManaged public var endAngle: CGFloat
+	@NSManaged open var endAngle: CGFloat
 	
 	/**
 	The color of the slice.
 	*/
-	public var strokeColor: UIColor = UIColor.blackColor()
+	open var strokeColor: UIColor = UIColor.black
 	/**
 	The width of the slice. Default value is 10.0.
 	*/
-	public var strokeWidth: CGFloat = 10.0
+	open var strokeWidth: CGFloat = 10.0
 	
 	/**
 	The duration of the slice animation. Default value is 0.35.
 	*/
-	public var animationDuration: Double = 0.35
+	open var animationDuration: Double = 0.35
 	
 	/**
 	The value that will be subtracted from the slice radius.
 	*/
-	public var radiusOffset: CGFloat = 0.0
+	open var radiusOffset: CGFloat = 0.0
 	
 	public override init() {
 		super.init()
-		contentsScale = UIScreen.mainScreen().scale
+		contentsScale = UIScreen.main.scale
 	}
 	
-	public override init(layer: AnyObject) {
+	public override init(layer: Any) {
 		super.init(layer: layer)
-		contentsScale = UIScreen.mainScreen().scale
+		contentsScale = UIScreen.main.scale
 		
 		if layer is ASPCircleChartSliceLayer {
-			startAngle = layer.startAngle
-			endAngle = layer.endAngle
-			strokeColor = layer.strokeColor
-			strokeWidth = layer.strokeWidth
+			startAngle = (layer as AnyObject).startAngle
+			endAngle = (layer as AnyObject).endAngle
+			strokeColor = (layer as AnyObject).strokeColor
+			strokeWidth = (layer as AnyObject).strokeWidth
 		}
 	}
 	
@@ -62,12 +62,12 @@ public class ASPCircleChartSliceLayer: CALayer {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public override func drawInContext(ctx: CGContext) {
-		super.drawInContext(ctx)
+	open override func draw(in ctx: CGContext) {
+		super.draw(in: ctx)
 		
 		UIGraphicsPushContext(ctx)
 		
-		let centerPoint = CGPoint(x: CGRectGetMidX(bounds), y: CGRectGetMidY(bounds))
+		let centerPoint = CGPoint(x: bounds.midX, y: bounds.midY)
 		let radius = min(centerPoint.x, centerPoint.y) - (strokeWidth / 2.0) - radiusOffset
 		
 		let bezierPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
@@ -81,24 +81,24 @@ public class ASPCircleChartSliceLayer: CALayer {
 		
 	}
 	
-	public override func actionForKey(event: String) -> CAAction? {
+	open override func action(forKey event: String) -> CAAction? {
 		if event == "startAngle" || event == "endAngle" {
 			let basicAnimation = CABasicAnimation(keyPath: event)
-			basicAnimation.fromValue = presentationLayer()?.valueForKey(event)
+			basicAnimation.fromValue = presentation()?.value(forKey: event)
 			basicAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
 			basicAnimation.duration = animationDuration
 			
 			return basicAnimation
 		}
 		
-		return super.actionForKey(event)
+		return super.action(forKey: event)
 	}
 	
-	public override class func needsDisplayForKey(key: String) -> Bool {
+	open override class func needsDisplay(forKey key: String) -> Bool {
 		if key == "startAngle" || key == "endAngle" {
 			return true
 		}
 		
-		return super.needsDisplayForKey(key)
+		return super.needsDisplay(forKey: key)
 	}
 }

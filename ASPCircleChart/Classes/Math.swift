@@ -34,13 +34,13 @@ extension CGFloat : NumericType { }
 
 //MARK: - Math interpolation methods -
 
-public func lerp<T: NumericType>(from: T, to: T, step: T) -> T {
+public func lerp<T: NumericType>(_ from: T, to: T, step: T) -> T {
     return from + step * (to - from)
 }
 
 //MARK: - Math mapping functions -
 
-public func rangeMap<T: NumericType>(value: T, min: T, max: T, newMin: T, newMax: T) -> T {
+public func rangeMap<T: NumericType>(_ value: T, min: T, max: T, newMin: T, newMax: T) -> T {
     return (((value - min) * (newMax - newMin)) / (max - min)) + newMin
 }
 

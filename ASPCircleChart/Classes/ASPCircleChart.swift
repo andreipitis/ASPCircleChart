@@ -13,30 +13,30 @@ Protocol that describes the datasource methods used by the CircleChart.
 */
 @objc public protocol ASPCircleChartDataSource {
 	func numberOfDataPoints() -> Int
-	func dataPointAtIndex(index: Int) -> Double
+	func dataPointAtIndex(_ index: Int) -> Double
 	func dataPointsSum() -> Double
-	func colorForDataPointAtIndex(index: Int) -> UIColor
+	func colorForDataPointAtIndex(_ index: Int) -> UIColor
 }
 
 /**
 A simple chart that uses slices on a circle to represent data.
 */
-@IBDesignable public class ASPCircleChart: UIView {
+@IBDesignable open class ASPCircleChart: UIView {
 	
 	/**
 	The starting angle in radians. Default value starts from the top.
 	*/
-	public var initialAngle: CGFloat = 3.0 * CGFloat(M_PI_2)
+	open var initialAngle: CGFloat = 3.0 * CGFloat(M_PI_2)
 	
 	/**
 	The width of the circle.
 	*/
-	@IBInspectable public var circleWidth: CGFloat = 10.0
+	@IBInspectable open var circleWidth: CGFloat = 10.0
 	
 	/**
 	The spacing between items. Should be a value between 0.0 and 0.5.
 	*/
-	@IBInspectable public var itemSpacing: CGFloat = 0.07 {
+	@IBInspectable open var itemSpacing: CGFloat = 0.07 {
 		didSet {
 			itemSpacing = max(0.0, min(0.5, itemSpacing))
 		}
@@ -45,13 +45,13 @@ A simple chart that uses slices on a circle to represent data.
 	/**
 	The datasource of the Chart.
 	*/
-	@IBOutlet public weak var dataSource: ASPCircleChartDataSource? {
+	@IBOutlet open weak var dataSource: ASPCircleChartDataSource? {
 		didSet {
 			reloadData()
 		}
 	}
 	
-	private var startPoint: Double = 0.0
+	fileprivate var startPoint: Double = 0.0
 	
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -63,7 +63,7 @@ A simple chart that uses slices on a circle to represent data.
 		reloadData()
 	}
 	
-	public override func layoutSubviews() {
+	open override func layoutSubviews() {
 		if let slices = layer.sublayers?.filter({ (item) -> Bool in
 			return item is ASPCircleChartSliceLayer
 		}) {
@@ -77,7 +77,7 @@ A simple chart that uses slices on a circle to represent data.
 	/**
 	Reloads the datasource. Handles delete, insert and update animations.
 	*/
-	public func reloadData() {
+	open func reloadData() {
 		if let dataSource = dataSource {
 			let numberOfDataPoints = dataSource.numberOfDataPoints()
 			
@@ -92,7 +92,7 @@ A simple chart that uses slices on a circle to represent data.
 		}
 	}
 	
-	private func insertNewSlices(itemsToInsert: Int) {
+	fileprivate func insertNewSlices(_ itemsToInsert: Int) {
 		let oldCount = layer.sublayers?.filter({ (item) -> Bool in
 			return item is ASPCircleChartSliceLayer
 		}).count ?? 0
@@ -106,13 +106,13 @@ A simple chart that uses slices on a circle to represent data.
 		}
 	}
 	
-	private func removeExtraSlices(itemsToRemove: Int) {
+	fileprivate func removeExtraSlices(_ itemsToRemove: Int) {
 		for _ in 0..<itemsToRemove {
 			layer.sublayers?.last?.removeFromSuperlayer()
 		}
 	}
 	
-	private func updateSlices(itemsToUpdate: Int) {
+	fileprivate func updateSlices(_ itemsToUpdate: Int) {
 		startPoint = 0
 		
 		var startAngle: CGFloat = initialAngle
