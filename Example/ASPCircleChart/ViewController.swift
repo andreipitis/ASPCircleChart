@@ -22,17 +22,17 @@ class ViewController: UIViewController {
 		circleChart.dataSource = dataSource
 	}
 	
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		var numberOfSlices = 2
 		
 		while numberOfSlices <= 2 {
-			numberOfSlices = random() % 8
+			numberOfSlices = Int(arc4random()) % 8
 		}
 		
 		var values = [Double]()
 		
 		for _ in 0..<numberOfSlices {
-			let randomNumber = Double(random() % 100)
+			let randomNumber = Double(arc4random() % 100)
 			values.append(randomNumber)
 		}
 		
@@ -49,17 +49,17 @@ class DataSource: ASPCircleChartDataSource {
 	}
 	
 	@objc func dataPointsSum() -> Double {
-		return items.reduce(0.0, combine: { (initial, new) -> Double in
+		return items.reduce(0.0, { (initial, new) -> Double in
 			return initial + new
 		})
 	}
 	
-	@objc func dataPointAtIndex(index: Int) -> Double {
+	@objc func dataPointAtIndex(_ index: Int) -> Double {
 		return items[index]
 	}
 	
 	
-	@objc func colorForDataPointAtIndex(index: Int) -> UIColor {
+	@objc func colorForDataPointAtIndex(_ index: Int) -> UIColor {
 		switch index {
 		case 0:
 			return UIColor(red: 205/255.0, green: 213/255.0, blue: 66/255.0, alpha: 1.0)
