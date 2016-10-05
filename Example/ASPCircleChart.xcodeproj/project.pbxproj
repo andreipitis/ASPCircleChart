@@ -530,10 +530,6 @@
 			baseConfigurationReference = C7661BA5744725A4C6EBF9DD /* Pods-ASPCircleChart_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = SC5NQW88NN;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -551,10 +547,6 @@
 			baseConfigurationReference = 4ED3AD622AA6A2DDAE3D08E1 /* Pods-ASPCircleChart_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = SC5NQW88NN;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
