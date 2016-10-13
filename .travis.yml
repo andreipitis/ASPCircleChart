@@ -10,5 +10,6 @@ before_install:
 - gem install cocoapods --pre # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild -workspace 'Example/ASPCircleChart.xcworkspace' -scheme 'ASPCircleChart-Example' -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6s' build test | xcpretty
+- set -o pipefail && xcodebuild -workspace 'Example/ASPCircleChart.xcworkspace' -scheme 'ASPCircleChart-Example' -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 6s' build test
 - pod lib lint
+- bash <(curl -s https://codecov.io/bash) -J 'ASPCircleChart'
