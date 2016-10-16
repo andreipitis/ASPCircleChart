@@ -34,6 +34,15 @@ extension CGFloat : NumericType { }
 
 //MARK: - Math mapping functions -
 
+/**
+	Maps the value from one range to another.
+	- Parameter value: The value to be mapped.
+	- Parameter min: The minimum value of the current range.
+	- Parameter max: The maximum value of the current range.
+	- Parameter newMin: The minimum value of the new range.
+	- Parameter newMax: The maximum value of the new range.
+	- Ex. `value = 50.0, min = 0.0, max = 100.0, newMin = 0.0, newMax = 1.0 => newValue = 0.5`
+*/
 public func rangeMap<T: NumericType>(_ value: T, min: T, max: T, newMin: T, newMax: T) -> T {
     return (((value - min) * (newMax - newMin)) / (max - min)) + newMin
 }
