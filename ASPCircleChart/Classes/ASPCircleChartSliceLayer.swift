@@ -50,16 +50,16 @@ open class ASPCircleChartSliceLayer: CALayer {
 		super.init(layer: layer)
 		contentsScale = UIScreen.main.scale
 		
-		if layer is ASPCircleChartSliceLayer {
-			startAngle = (layer as AnyObject).startAngle
-			endAngle = (layer as AnyObject).endAngle
-			strokeColor = (layer as AnyObject).strokeColor
-			strokeWidth = (layer as AnyObject).strokeWidth
+		if let layer = layer as? ASPCircleChartSliceLayer {
+			startAngle = layer.startAngle
+			endAngle = layer.endAngle
+			strokeColor = layer.strokeColor
+			strokeWidth = layer.strokeWidth
 		}
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		super.init(coder: aDecoder)
 	}
 	
 	open override func draw(in ctx: CGContext) {

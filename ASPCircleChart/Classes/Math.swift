@@ -32,21 +32,8 @@ extension UInt32 : NumericType { }
 extension UInt64 : NumericType { }
 extension CGFloat : NumericType { }
 
-//MARK: - Math interpolation methods -
-
-public func lerp<T: NumericType>(_ from: T, to: T, step: T) -> T {
-    return from + step * (to - from)
-}
-
 //MARK: - Math mapping functions -
 
 public func rangeMap<T: NumericType>(_ value: T, min: T, max: T, newMin: T, newMax: T) -> T {
     return (((value - min) * (newMax - newMin)) / (max - min)) + newMin
 }
-
-//MARK: - Numeric extensions -
-
-public func *(left: CGSize, right: CGFloat) -> CGSize {
-    return CGSize(width: left.height * right, height: left.width * right)
-}
-

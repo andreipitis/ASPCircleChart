@@ -13,8 +13,9 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		62903400FC7BAEE296ED45AB /* Pods_ASPCircleChart_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C752ED7FEADB5DB5317D1EC /* Pods_ASPCircleChart_Tests.framework */; };
+		751C93601DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C935F1DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift */; };
+		751C93621DB2FE9B003D614A /* ASPCircleChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C93611DB2FE9B003D614A /* ASPCircleChartTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,9 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ASPCircleChart_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASPCircleChart_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		672D864E2C1C253B20394F40 /* Pods-ASPCircleChart_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASPCircleChart_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASPCircleChart_Example/Pods-ASPCircleChart_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		751C935F1DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPCircleChartSliceLayerTests.swift; sourceTree = "<group>"; };
+		751C93611DB2FE9B003D614A /* ASPCircleChartTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPCircleChartTests.swift; sourceTree = "<group>"; };
 		8DF1D4F642E0BBD90F18FC18 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A14543A40060DEFEF72562C2 /* ASPCircleChart.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ASPCircleChart.podspec; path = ../ASPCircleChart.podspec; sourceTree = "<group>"; };
 		B014FC12D13BA4798E835251 /* Pods-ASPCircleChart_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASPCircleChart_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ASPCircleChart_Example/Pods-ASPCircleChart_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +128,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				751C93611DB2FE9B003D614A /* ASPCircleChartTests.swift */,
+				751C935F1DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -372,7 +375,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				751C93601DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift in Sources */,
+				751C93621DB2FE9B003D614A /* ASPCircleChartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +543,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ASPCircleChart_Example.app/ASPCircleChart_Example";
 			};
 			name = Debug;
 		};
@@ -552,6 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ASPCircleChart_Example.app/ASPCircleChart_Example";
 			};
 			name = Release;
 		};
