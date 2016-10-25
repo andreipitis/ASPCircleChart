@@ -8,8 +8,18 @@
 
 import UIKit
 
+/**
+Enum for setting the cap style of the slices.
+*/
 public enum LineCapStyle {
+	/**
+	The ends of the slice will be square.
+	*/
 	case straight
+	
+	/**
+	The ends of the slice will be rounded.
+	*/
 	case round
 }
 
@@ -156,26 +166,7 @@ A simple chart that uses slices on a circle to represent data.
 		var spacing: CGFloat = 0
 		
 		if itemSpacing > 0.0 {
-			for index in 0..<slices.count {
-				let dataPoint = dataSource!.dataPointAtIndex(index)
-				
-				startPoint += dataPoint
-				
-				let endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
-				
-				if startAngle > endAngle - itemSpacing {
-					spacing += itemSpacing
-				}
-				
-				if dataPoint == 0 {
-					spacing -= itemSpacing
-				}
-				
-				startAngle = endAngle
-			}
-			
-			startAngle = initialAngle
-			startPoint = 0
+			spacing = calculateSpacing(slices: slices)
 		}
 		
 		for index in 0..<slices.count {
@@ -220,5 +211,33 @@ A simple chart that uses slices on a circle to represent data.
 				slice.zPosition = CGFloat(slices.count - index)
 			}
 		}
+	}
+	
+	private func calculateSpacing(slices: [ASPCircleChartSliceLayer]) -> CGFloat {
+		var startPoint: Double = 0
+		
+		var startAngle: CGFloat = initialAngle
+		let maxPoint = dataSource!.dataPointsSum()
+		var spacing: CGFloat = 0
+		
+		for index in 0..<slices.count {
+			let dataPoint = dataSource!.dataPointAtIndex(index)
+			
+			startPoint += dataPoint
+			
+			let endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
+			
+			if startAngle > endAngle - itemSpacing {
+				spacing += itemSpacing
+			}
+			
+			if dataPoint == 0 {
+				spacing -= itemSpacing
+			}
+			
+			startAngle = endAngle
+		}
+		
+		return spacing
 	}
 }
