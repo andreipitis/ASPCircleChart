@@ -10,7 +10,7 @@ import XCTest
 @testable import ASPCircleChart
 
 class MockDataSource: ASPCircleChartDataSource {
-	var items: [Double] = [7.5, 0, 0.08]
+	var items: [Double] = [7.5, 0, 10.08]
 	
 	func numberOfDataPoints() -> Int {
 		return items.count
@@ -64,7 +64,7 @@ class ASPCircleChartTests: XCTestCase {
 		
 		let updatedFirstSlice = sut.layer.sublayers!.first as! ASPCircleChartSliceLayer
 		let updatedFirstSliceEndAngle = updatedFirstSlice.endAngle
-		let updatedFirstSliceStartToEnd = firstSlice.endAngle - firstSlice.startAngle
+		let updatedFirstSliceStartToEnd = updatedFirstSlice.endAngle - updatedFirstSlice.startAngle
 		
 		XCTAssertEqual(firstSlice, updatedFirstSlice, "References to the same object.")
 		XCTAssertNotEqual(firstSliceEndAngle, updatedFirstSliceEndAngle, "Angles are different.")

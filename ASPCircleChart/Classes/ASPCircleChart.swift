@@ -153,6 +153,31 @@ A simple chart that uses slices on a circle to represent data.
 			return item is ASPCircleChartSliceLayer
 		}) as? [ASPCircleChartSliceLayer] ?? []
 		
+		var spacing: CGFloat = 0
+		
+		if itemSpacing > 0.0 {
+			for index in 0..<slices.count {
+				let dataPoint = dataSource!.dataPointAtIndex(index)
+				
+				startPoint += dataPoint
+				
+				var endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
+				
+				if startAngle > endAngle - itemSpacing {
+					spacing += itemSpacing
+				}
+				
+				if dataPoint == 0 {
+					spacing -= itemSpacing
+				}
+				
+				startAngle = endAngle
+			}
+			
+			startAngle = initialAngle
+			startPoint = 0
+		}
+		
 		for index in 0..<slices.count {
 			let slice = slices[index]
 			let dataPoint = dataSource!.dataPointAtIndex(index)
@@ -161,27 +186,28 @@ A simple chart that uses slices on a circle to represent data.
 			
 			var endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
 			
-			if endAngle - itemSpacing < startAngle && dataPoint > Double(itemSpacing) {
-				let tempAngle = endAngle - itemSpacing
-				endAngle = startAngle
-				startAngle = tempAngle
-			} else if dataPoint > Double(itemSpacing) {
-				endAngle -= itemSpacing
+			if index != slices.count - 1 {
+				endAngle -= 2.0 * spacing
 			}
 			
-			if (startAngle != endAngle - itemSpacing) && dataPoint > Double(itemSpacing) {
-				slice.startAngle = startAngle
-				slice.endAngle = endAngle
-				slice.strokeWidth = circleWidth
-				slice.strokeColor = dataSource!.colorForDataPointAtIndex(index)
-				
-				startAngle = endAngle + itemSpacing
+			if dataPoint > 0.0 {
+				if endAngle - itemSpacing > startAngle {
+					slice.startAngle = startAngle
+					slice.endAngle = endAngle - itemSpacing
+					slice.strokeWidth = circleWidth
+					slice.strokeColor = dataSource!.colorForDataPointAtIndex(index)
+					
+					startAngle = endAngle
+				} else {
+					slice.startAngle = startAngle
+					slice.endAngle = startAngle + itemSpacing
+					
+					startAngle = startAngle + 2.0 * itemSpacing
+				}
 			} else {
 				slice.startAngle = startAngle
 				slice.endAngle = startAngle
-				startAngle += itemSpacing
 			}
-			
 			
 			switch lineCapStyle {
 			case .round:
