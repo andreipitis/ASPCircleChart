@@ -161,7 +161,7 @@ A simple chart that uses slices on a circle to represent data.
 				
 				startPoint += dataPoint
 				
-				var endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
+				let endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
 				
 				if startAngle > endAngle - itemSpacing {
 					spacing += itemSpacing
