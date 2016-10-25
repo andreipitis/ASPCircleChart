@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum LineCapStyle {
+	case straight
+	case round
+}
+
 /**
 Protocol that describes the datasource methods used by the CircleChart.
 */
@@ -27,6 +32,20 @@ A simple chart that uses slices on a circle to represent data.
 	The starting angle in radians. Default value starts from the top.
 	*/
 	open var initialAngle: CGFloat = 3.0 * CGFloat(M_PI_2)
+	
+	/**
+	The order in which slices are overlayed. By default the latest slice is on top of the previous one.
+	*/
+	open var latestSliceOnTop: Bool = true {
+		didSet {
+			reloadData()
+		}
+	}
+	
+	/**
+	The cap style of the slices.
+	*/
+	open var lineCapStyle: LineCapStyle = .straight
 	
 	/**
 	The width of the circle.
@@ -102,6 +121,18 @@ A simple chart that uses slices on a circle to represent data.
 			slice.frame = bounds
 			slice.strokeWidth = circleWidth
 			slice.strokeColor = dataSource!.colorForDataPointAtIndex(oldCount + index)
+			
+			switch lineCapStyle {
+			case .round:
+				slice.lineCapStyle = .round
+			default:
+				slice.lineCapStyle = .butt
+			}
+			
+			if latestSliceOnTop == false {
+				slice.zPosition = CGFloat((oldCount + itemsToInsert) - index)
+			}
+			
 			layer.addSublayer(slice)
 		}
 	}
@@ -149,6 +180,18 @@ A simple chart that uses slices on a circle to represent data.
 				slice.startAngle = startAngle
 				slice.endAngle = startAngle
 				startAngle += itemSpacing
+			}
+			
+			
+			switch lineCapStyle {
+			case .round:
+				slice.lineCapStyle = .round
+			default:
+				slice.lineCapStyle = .butt
+			}
+			
+			if latestSliceOnTop == false {
+				slice.zPosition = CGFloat(slices.count - index)
 			}
 		}
 	}

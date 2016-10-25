@@ -41,6 +41,11 @@ open class ASPCircleChartSliceLayer: CALayer {
 	*/
 	open var radiusOffset: CGFloat = 0.0
 	
+	/**
+	The cap style of the slice.
+	*/
+	open var lineCapStyle: CGLineCap = .butt
+	
 	public override init() {
 		super.init()
 		contentsScale = UIScreen.main.scale
@@ -55,6 +60,7 @@ open class ASPCircleChartSliceLayer: CALayer {
 			endAngle = layer.endAngle
 			strokeColor = layer.strokeColor
 			strokeWidth = layer.strokeWidth
+			lineCapStyle = layer.lineCapStyle
 		}
 	}
 	
@@ -75,6 +81,7 @@ open class ASPCircleChartSliceLayer: CALayer {
 		strokeColor.setStroke()
 		
 		bezierPath.lineWidth = strokeWidth
+		bezierPath.lineCapStyle = lineCapStyle
 		bezierPath.stroke()
 		
 		UIGraphicsPopContext()
