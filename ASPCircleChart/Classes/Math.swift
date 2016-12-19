@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol NumericType {
+internal protocol NumericType {
     static func +(lhs: Self, rhs: Self) -> Self
     static func -(lhs: Self, rhs: Self) -> Self
     static func *(lhs: Self, rhs: Self) -> Self
@@ -43,6 +43,6 @@ extension CGFloat : NumericType { }
 	- Parameter newMax: The maximum value of the new range.
 	- Ex. `value = 50.0, min = 0.0, max = 100.0, newMin = 0.0, newMax = 1.0 => newValue = 0.5`
 */
-public func rangeMap<T: NumericType>(_ value: T, min: T, max: T, newMin: T, newMax: T) -> T {
+internal func rangeMap<T: NumericType>(_ value: T, min: T, max: T, newMin: T, newMax: T) -> T {
     return (((value - min) * (newMax - newMin)) / (max - min)) + newMin
 }
