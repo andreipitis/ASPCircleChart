@@ -61,6 +61,8 @@ open class ASPCircleChartSliceLayer: CALayer {
 			strokeColor = layer.strokeColor
 			strokeWidth = layer.strokeWidth
 			lineCapStyle = layer.lineCapStyle
+			animationDuration = layer.animationDuration
+			radiusOffset = layer.radiusOffset
 		}
 	}
 	
