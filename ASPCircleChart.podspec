@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ASPCircleChart'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'ASPCircleChart is a simple chart that uses slices on a circle to represent data.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ ASPCircleChart is a simple chart that uses slices on a circle to represent data.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Andrei-Sergiu Pitis' => 'andrei.pitis@lateral-inc.com' }
   s.source           = { :git => 'https://github.com/andreipitis/ASPCircleChart.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/AndyPitis'
+  s.social_media_url = 'https://twitter.com/AndyPitis'
 
   s.ios.deployment_target = '8.0'
 
