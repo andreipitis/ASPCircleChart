@@ -41,7 +41,7 @@ A simple chart that uses slices on a circle to represent data.
 	/**
 	The starting angle in radians. Default value starts from the top.
 	*/
-	open var initialAngle: CGFloat = 3.0 * CGFloat(M_PI_2)
+	open var initialAngle: CGFloat = 3.0 * (.pi / 2.0)
 	
 	/**
 	The order in which slices are overlayed. By default the latest slice is on top of the previous one.
@@ -175,7 +175,7 @@ A simple chart that uses slices on a circle to represent data.
 			
 			startPoint += dataPoint
 			
-			var endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
+			var endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * .pi + initialAngle)
 			
 			if index != slices.count - 1 {
 				endAngle -= 2.0 * spacing
@@ -225,7 +225,7 @@ A simple chart that uses slices on a circle to represent data.
 			
 			startPoint += dataPoint
 			
-			let endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * CGFloat(M_PI) + initialAngle)
+			let endAngle: CGFloat = rangeMap(CGFloat(startPoint), min: 0.0, max: CGFloat(maxPoint), newMin: 0.0 + initialAngle, newMax: 2.0 * .pi + initialAngle)
 			
 			if startAngle > endAngle - itemSpacing {
 				spacing += itemSpacing
