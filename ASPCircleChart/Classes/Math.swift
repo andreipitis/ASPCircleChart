@@ -14,7 +14,6 @@ internal protocol NumericType {
     static func -(lhs: Self, rhs: Self) -> Self
     static func *(lhs: Self, rhs: Self) -> Self
     static func /(lhs: Self, rhs: Self) -> Self
-    static func %(lhs: Self, rhs: Self) -> Self
     init(_ v: Int)
 }
 

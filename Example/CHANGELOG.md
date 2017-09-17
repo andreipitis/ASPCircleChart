@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/andreipitis/ASPCircleChart/releases/tag/2.0.0) - 2017-09-17
+
+###Updated
+- Deprecated code.
+
 ## [1.1.2](https://github.com/andreipitis/ASPCircleChart/releases/tag/1.1.2) - 2017-04-13
 
 ###Updated
