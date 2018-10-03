@@ -94,7 +94,7 @@ open class ASPCircleChartSliceLayer: CALayer {
 		if event == "startAngle" || event == "endAngle" {
 			let basicAnimation = CABasicAnimation(keyPath: event)
 			basicAnimation.fromValue = presentation()?.value(forKey: event)
-			basicAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            basicAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
 			basicAnimation.duration = animationDuration
 			
 			return basicAnimation
