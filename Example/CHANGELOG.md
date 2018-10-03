@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.0.0](https://github.com/andreipitis/ASPCircleChart/releases/tag/3.0.0) - 2018-10-03
+
+###Changed
+- Updated code to Swift 4.2.
+
 ## [2.0.0](https://github.com/andreipitis/ASPCircleChart/releases/tag/2.0.0) - 2017-09-17
 
 ###Updated
