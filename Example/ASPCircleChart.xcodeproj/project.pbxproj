@@ -16,6 +16,7 @@
 		62903400FC7BAEE296ED45AB /* Pods_ASPCircleChart_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C752ED7FEADB5DB5317D1EC /* Pods_ASPCircleChart_Tests.framework */; };
 		751C93601DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C935F1DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift */; };
 		751C93621DB2FE9B003D614A /* ASPCircleChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C93611DB2FE9B003D614A /* ASPCircleChartTests.swift */; };
+		75A775172164AEBC00E6CE10 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 75A775162164AEBC00E6CE10 /* .travis.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		751C935F1DB2F87E003D614A /* ASPCircleChartSliceLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPCircleChartSliceLayerTests.swift; sourceTree = "<group>"; };
 		751C93611DB2FE9B003D614A /* ASPCircleChartTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPCircleChartTests.swift; sourceTree = "<group>"; };
 		758A5E531E9F818D005F39B2 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		75A775162164AEBC00E6CE10 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		8DF1D4F642E0BBD90F18FC18 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A14543A40060DEFEF72562C2 /* ASPCircleChart.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ASPCircleChart.podspec; path = ../ASPCircleChart.podspec; sourceTree = "<group>"; };
 		B014FC12D13BA4798E835251 /* Pods-ASPCircleChart_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASPCircleChart_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ASPCircleChart_Example/Pods-ASPCircleChart_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				A14543A40060DEFEF72562C2 /* ASPCircleChart.podspec */,
 				8DF1D4F642E0BBD90F18FC18 /* README.md */,
 				56A8E477E0A82A10C3B7D716 /* LICENSE */,
+				75A775162164AEBC00E6CE10 /* .travis.yml */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				75A775172164AEBC00E6CE10 /* .travis.yml in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
