@@ -30,7 +30,7 @@ ASPCircleChart is a simple chart that uses slices on a circle to represent data.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'ASPCircleChart/Classes/**/*'
+  s.source_files = 'Sources/**/*'
   
   # s.resource_bundles = {
   #   'ASPCircleChart' => ['ASPCircleChart/Assets/*.png']
