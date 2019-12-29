@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BBA3CA364EB2234BA9246F68B7CE727 /* ASPCircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F08D7989D7E84D574AB5A8C58B6F714 /* ASPCircleChart.swift */; };
 		2D7C07497A32EBAB46BAD16C88825054 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		365368A29BAE70211D7C2DDC26ED59EE /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A6B6405160DCA3096D27D046470387 /* Math.swift */; };
 		3DA66EE6E0676F2709DCB40892919413 /* Pods-ASPCircleChart_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AEB1696B423CD9067124DF57458C342 /* Pods-ASPCircleChart_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72E4EB8E3F0A74429B2BFD5FF350E4A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		75876B6123B8BC1800F8F440 /* ASPCircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75876B5E23B8BC1800F8F440 /* ASPCircleChart.swift */; };
+		75876B6223B8BC1800F8F440 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75876B5F23B8BC1800F8F440 /* Math.swift */; };
+		75876B6323B8BC1800F8F440 /* ASPCircleChartSliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75876B6023B8BC1800F8F440 /* ASPCircleChartSliceLayer.swift */; };
 		85AED8A756BD581DCE3941AC6B7FBB46 /* ASPCircleChart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 992D03641B5F6B31280ABF6540A3D942 /* ASPCircleChart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		910B6C5F526CD379E6096B78184B678E /* Pods-ASPCircleChart_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2AE945E25958190D56140A3C6274ABC /* Pods-ASPCircleChart_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A25DB67C3E51C1F77546DACF65ACC378 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		B5A6E5AA67B18FA46B6B2A16B712CC95 /* Pods-ASPCircleChart_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A95C1D1F783F1570BD4292B42209FE90 /* Pods-ASPCircleChart_Tests-dummy.m */; };
 		BF4BF616958BD910882EBDC1DE4EADE3 /* ASPCircleChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C93135C0DB0C4E3B75610B9149B5D265 /* ASPCircleChart-dummy.m */; };
 		D55EC22B62886796DEB9193F56D25F48 /* Pods-ASPCircleChart_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8A7F9D98717100006EE57E35DD335 /* Pods-ASPCircleChart_Example-dummy.m */; };
-		F365C8E559E53B28341FA95776211484 /* ASPCircleChartSliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C0E9237A1D1D0C114D6B30526835D /* ASPCircleChartSliceLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,18 +33,19 @@
 
 /* Begin PBXFileReference section */
 		0A35309506CD2A2478D34EC5206FF22F /* ASPCircleChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASPCircleChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F08D7989D7E84D574AB5A8C58B6F714 /* ASPCircleChart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ASPCircleChart.swift; sourceTree = "<group>"; };
 		20D6336CE45D316C7913A88E52B0C70D /* Pods-ASPCircleChart_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ASPCircleChart_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2213F32B2EEB192ADA7D1837F4EE9848 /* Pods-ASPCircleChart_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ASPCircleChart_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2992710EB598CE4D01200504EB046DE9 /* Pods-ASPCircleChart_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ASPCircleChart_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		2E74014C54F4695B393F7CD8F30C6EA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35BB08C54DD18A9956517F4FE47238E8 /* Pods-ASPCircleChart_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ASPCircleChart_Example-resources.sh"; sourceTree = "<group>"; };
-		38A6B6405160DCA3096D27D046470387 /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		3CE1189AE0928DFD891D4E35184BE4F1 /* Pods-ASPCircleChart_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ASPCircleChart_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		401EED2B81E1F30282D65528E5614742 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45536040A1F91F5A22CEA168E21F807C /* Pods-ASPCircleChart_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ASPCircleChart_Tests.modulemap"; sourceTree = "<group>"; };
 		4AEB1696B423CD9067124DF57458C342 /* Pods-ASPCircleChart_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ASPCircleChart_Example-umbrella.h"; sourceTree = "<group>"; };
 		7293D4E9A28CB56EDF2C40D46FAAEBCF /* Pods-ASPCircleChart_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ASPCircleChart_Example.release.xcconfig"; sourceTree = "<group>"; };
+		75876B5E23B8BC1800F8F440 /* ASPCircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPCircleChart.swift; sourceTree = "<group>"; };
+		75876B5F23B8BC1800F8F440 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		75876B6023B8BC1800F8F440 /* ASPCircleChartSliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPCircleChartSliceLayer.swift; sourceTree = "<group>"; };
 		8AAC66A59713550F3C7CB3B87A440E68 /* Pods-ASPCircleChart_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ASPCircleChart_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8FB8A7F9D98717100006EE57E35DD335 /* Pods-ASPCircleChart_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ASPCircleChart_Example-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -52,7 +53,6 @@
 		992D03641B5F6B31280ABF6540A3D942 /* ASPCircleChart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ASPCircleChart-umbrella.h"; sourceTree = "<group>"; };
 		9E404975CD6FF0585706EDE42BDB587C /* Pods_ASPCircleChart_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ASPCircleChart_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05C189B8FAD0D2133AD29A7948FC67D /* ASPCircleChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ASPCircleChart.modulemap; sourceTree = "<group>"; };
-		A54C0E9237A1D1D0C114D6B30526835D /* ASPCircleChartSliceLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ASPCircleChartSliceLayer.swift; sourceTree = "<group>"; };
 		A95C1D1F783F1570BD4292B42209FE90 /* Pods-ASPCircleChart_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ASPCircleChart_Tests-dummy.m"; sourceTree = "<group>"; };
 		AD8F8DE3C28FE80C43E7699175CBAD10 /* Pods_ASPCircleChart_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ASPCircleChart_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A1ED1A8CE8188CAEFA09594F98AC84 /* Pods-ASPCircleChart_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ASPCircleChart_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 		6542E66B6F968E2ED88A96FA5F103168 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+				75876B5D23B8BC1800F8F440 /* Sources */,
 				77B02A5888B165189B7BC85964C3AF50 /* ASPCircleChart */,
 			);
 			name = "Development Pods";
@@ -163,10 +164,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		75876B5D23B8BC1800F8F440 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				75876B5E23B8BC1800F8F440 /* ASPCircleChart.swift */,
+				75876B5F23B8BC1800F8F440 /* Math.swift */,
+				75876B6023B8BC1800F8F440 /* ASPCircleChartSliceLayer.swift */,
+			);
+			name = Sources;
+			path = ../../Sources;
+			sourceTree = "<group>";
+		};
 		77B02A5888B165189B7BC85964C3AF50 /* ASPCircleChart */ = {
 			isa = PBXGroup;
 			children = (
-				E960B17D9B439370D82BF6CB105E0924 /* ASPCircleChart */,
 				71BBBD443B214DA02FD55C730334CADA /* Support Files */,
 			);
 			name = ASPCircleChart;
@@ -182,16 +193,6 @@
 				7284362FC5F74505389C72EED88313F2 /* Products */,
 				3B1964D34861BD739DE6AA0E444702AA /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		906324AC3C540D4568251C16B9A50C33 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0F08D7989D7E84D574AB5A8C58B6F714 /* ASPCircleChart.swift */,
-				A54C0E9237A1D1D0C114D6B30526835D /* ASPCircleChartSliceLayer.swift */,
-				38A6B6405160DCA3096D27D046470387 /* Math.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		A8EDE5AD676B846AD9B20CCCB6718EB2 /* Pods-ASPCircleChart_Example */ = {
@@ -218,14 +219,6 @@
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E960B17D9B439370D82BF6CB105E0924 /* ASPCircleChart */ = {
-			isa = PBXGroup;
-			children = (
-				906324AC3C540D4568251C16B9A50C33 /* Classes */,
-			);
-			path = ASPCircleChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,22 +310,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					1818ECDBBF0550BD08635C9535000CCB = {
 						LastSwiftMigration = 0900;
 					};
 					92747521625C1B2053EA7914824D3597 = {
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 7284362FC5F74505389C72EED88313F2 /* Products */;
@@ -368,9 +362,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF4BF616958BD910882EBDC1DE4EADE3 /* ASPCircleChart-dummy.m in Sources */,
-				1BBA3CA364EB2234BA9246F68B7CE727 /* ASPCircleChart.swift in Sources */,
-				F365C8E559E53B28341FA95776211484 /* ASPCircleChartSliceLayer.swift in Sources */,
-				365368A29BAE70211D7C2DDC26ED59EE /* Math.swift in Sources */,
+				75876B6123B8BC1800F8F440 /* ASPCircleChart.swift in Sources */,
+				75876B6323B8BC1800F8F440 /* ASPCircleChartSliceLayer.swift in Sources */,
+				75876B6223B8BC1800F8F440 /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,8 +404,6 @@
 				PRODUCT_NAME = ASPCircleChart;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -422,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -533,7 +526,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -544,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -624,7 +617,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -656,8 +648,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
