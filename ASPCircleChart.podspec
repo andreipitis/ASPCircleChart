@@ -24,7 +24,7 @@ ASPCircleChart is a simple chart that uses slices on a circle to represent data.
   s.homepage         = 'https://github.com/andreipitis/ASPCircleChart'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Andrei-Sergiu Pitis' => 'andrei.pitis@lateral-inc.com' }
+  s.author           = { 'Andrei-Sergiu Pitis' => 'andy.pitis@gmail.com' }
   s.source           = { :git => 'https://github.com/andreipitis/ASPCircleChart.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/AndyPitis'
 

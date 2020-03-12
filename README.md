@@ -33,7 +33,7 @@ pod "ASPCircleChart"
 
 ## Author
 
-Andrei-Sergiu Pitis, andrei.pitis@lateral-inc.com
+Andrei-Sergiu Pitis, andy.pitis@gmail.com
 
 ## License
 
