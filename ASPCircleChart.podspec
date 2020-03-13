@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ASPCircleChart'
-  s.version          = '3.0.0'
+  s.version          = '3.0.1'
   s.summary          = 'ASPCircleChart is a simple chart that uses slices on a circle to represent data.'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,7 @@ ASPCircleChart is a simple chart that uses slices on a circle to represent data.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Sources/**/*'
+  s.swift_versions = ['4.2', '5.0']
   
   # s.resource_bundles = {
   #   'ASPCircleChart' => ['ASPCircleChart/Assets/*.png']
